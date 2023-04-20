@@ -115,7 +115,9 @@
         flex:1;
         background-color: #3e3c61;
         @include mobile{
-            
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
         }
 
 //Navbar.jsx css
@@ -164,6 +166,9 @@
 
             .searchForm{
                 padding: 10px;
+                @include mobile{
+                    padding: 5px;
+                }
 
                 input{
                     background-color: transparent;
@@ -173,6 +178,9 @@
 
                     &::placeholder{
                         color: lightgrey;
+                        @include mobile{
+                            font-size: 10px;
+                        }
                     }
                 }
             } 
@@ -229,11 +237,22 @@
                     width: 50px;
                     border-radius: 50%;
                     object-fit: cover;
+                    @include mobile{
+                        height: 30px;
+                        width: 30px;
+                    }
                 }
 
                 .userChatInfo{
-                    span{font-size: 18px; font-weight: 500;}
-                    p{font-size: 14px; color:lightgray;}
+                    span{font-size: 18px; font-weight: 500;
+                    @include mobile{
+                        font-size: 10px; 
+                    }}
+                    p{font-size: 14px; color:lightgray;
+                    @include mobile{
+                        font-size: 8px;
+                    }}
+
                 }
             }
         }
@@ -283,6 +302,13 @@
                         width: 40px;
                         border-radius: 50%;
                         object-fit: cover;
+                        @include mobile{
+                            height: 20px;
+                            width: 20px;
+                        }
+                    span{
+                       @include mobile{font-size: 4px;}
+                    }
                     }
                 }
                 .messageContent{
@@ -290,6 +316,7 @@
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
+                    
 
                     p{
                         background-color: white;
@@ -305,6 +332,8 @@
                         width:50%;
                         @include mobile{
                             width:20%;
+                            height: 10px;
+                            width: 10px;
                         }
                     }
                 }
